@@ -1,0 +1,22 @@
+class Solution {
+    public ArrayList<Integer> kLargest(int[] arr, int k) {
+        // Your code here
+        ArrayList<Integer>array =new ArrayList<>();
+        Arrays.sort(arr);
+        int n=arr.length;
+        int a=0;
+        if(k<=0) return array;
+        if(k>n) k=n;
+        for(int i=n-1;i>=0;i--)
+        {
+            if(a<k)
+            {
+                array.add(arr[i]);
+                a++;
+            }
+            
+        }
+        
+        return array;
+    }
+}
