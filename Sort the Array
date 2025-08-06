@@ -1,6 +1,5 @@
 class Solution {
-    // Please change the array in-place
-    public void insertionSort(int arr[]) {
+    public void Main(int arr[]) {
         // code here
         Arrays.sort(arr);
         ArrayList<Integer> array=new ArrayList<>();
