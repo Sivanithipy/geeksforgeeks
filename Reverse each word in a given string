@@ -1,0 +1,33 @@
+class Solution {
+    public String reverseWords(String s) {
+        // Code here
+        s=s.trim();
+        int n = s.length();
+        Stack <Character> st = new Stack<>();
+        StringBuilder result = new StringBuilder();
+        for(int i = 0 ; i < n ; ++i)
+        {
+            if(s.charAt(i)!=' ')
+            {
+                st.push(s.charAt(i));
+            }
+            else
+            {
+                while(!st.isEmpty())
+                {
+                    result.append(st.pop());
+                }
+                result.append(" ");
+                while (i + 1 < n && s.charAt(i + 1) == ' ')
+                {
+                    i++;
+                }
+            }
+        }
+         while(!st.isEmpty())
+        {
+            result.append(st.pop());
+        }
+        return result.toString();
+    }
+}
