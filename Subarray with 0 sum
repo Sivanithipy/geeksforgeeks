@@ -1,0 +1,20 @@
+import java.util.HashSet;
+
+class Solution {
+
+    static boolean findsum(int arr[]) {
+        int n = arr.length;
+        int total = 0;
+        HashSet<Integer> prefixSums = new HashSet<>();
+
+        for (int i = 0; i < n; i++) {
+            total += arr[i];
+
+            if (total == 0 || prefixSums.contains(total) || arr[i] == 0) {
+                return true;
+            }
+            prefixSums.add(total);
+        }
+        return false;
+    }
+}
